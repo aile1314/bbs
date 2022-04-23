@@ -9,9 +9,7 @@ window.onload =function () {
 //ログを表示
 function showLog() {
     //Ajaxでログを取得
-    ajaxGet(
-        "./api.php?type=getLog",
-        function (xhr, text){
+    ajaxGet("./api.php?type=getLog", function (xhr, text){
             var logs = JSON.parse(text);
             renderLog(logs);
         }
@@ -20,7 +18,7 @@ function showLog() {
 
 //ログデータに基づき
 function renderLog(logs){
-    var html = " ";
+    var html = "";
     for(var i in logs){
         var m = logs[i];
         var name = m["name"];
@@ -34,7 +32,7 @@ function renderLog(logs){
 function writeLog(){
     var name = $("name").value;
     var body = $("body").value;
-    var params = "type=writeLog&" + "name" + encodeURI(name) + "&" + "body=" + encodeURI(body);
+    var params = "type=writeLog&" + "name=" + encodeURI(name) + "&" + "body=" + encodeURI(body);
     ajaxGet("./api.php?" + params, function(xhr, text){
         $("body").value = "";//テキストフィールドを初期化
         showLog();//書き込みを反映させる
