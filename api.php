@@ -33,7 +33,7 @@ function writeLog(){
     $json = file_get_contents(LOGFILE);
     $a = json_decode($json);
     if(!is_array($a)){$a = array();}
-    array_unshift($a, array("name" => $name, "body" => $body));
+    array_unshift($a, array("name"=>$name, "body"=>$body));
     $json = json_encode($a);
     file_put_contents(LOGFILE, $json);
     echo '{"stat":"ok"}';
