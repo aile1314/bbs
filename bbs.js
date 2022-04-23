@@ -25,7 +25,7 @@ function renderLog(logs){
         var body = m["body"];
         html += "<li>" + name + " 「" + body + "」</li>";
     }
-    $("logList").innerHTML = html
+    $("logList").innerHTML = html;
 }
 
 //書き込みを投稿する
