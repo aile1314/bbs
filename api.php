@@ -24,7 +24,7 @@ function writeLog(){
     $name = !empty($_GET["name"]) ? $_GET["name"] : "名無し";
     $body = isset($_GET["body"]) ? $_GET["body"] : "";
     if($body == ""){
-        echo '{"start":"error","msg":"本文がありません"}';
+        echo '{"stat":"error","msg":"本文がありません"}';
         exit;
     }
     //ログに追記する
