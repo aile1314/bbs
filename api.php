@@ -38,3 +38,4 @@ function writeLog(){
     file_put_contents(LOGFILE, $json);
     echo '{"stat":"ok"}';
 }
+?>
